@@ -1,6 +1,31 @@
 <script setup lang="ts">
 import { RouterLink, RouterView } from 'vue-router'
 import HelloWorld from './components/HelloWorld.vue'
+
+import { createPromiseClient } from "@connectrpc/connect";
+import { createConnectTransport } from "@connectrpc/connect-web";
+
+// Import service definition that you want to connect to.
+import { ElizaService } from "@buf/connectrpc_eliza.connectrpc_es/connectrpc/eliza/v1/eliza_connect";
+import { AuthenticationService } from '@/proto/authentication_connect'
+
+const transport = createConnectTransport({
+  baseUrl: "http://localhost:50051",
+});
+
+const client = createPromiseClient(AuthenticationService, transport);
+
+async function getElizaResponse() {
+  const response = await client.login({
+    username: "test",
+    password: "test",
+  });
+
+  console.log(response);
+}
+
+getElizaResponse();
+
 </script>
 
 <template>
