@@ -1,8 +1,8 @@
 syntax = "proto3";
 
-option go_package = "authentication/v1;authentication";
+package api.authentication.v1;
 
-package authentication.v1;
+option go_package = "docker_sphere/gateway/pkg/server/api/authentication/v1";
 
 // Authentication service
 service AuthenticationService {

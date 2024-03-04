@@ -4,9 +4,6 @@ import HelloWorld from './components/HelloWorld.vue'
 
 import { createPromiseClient } from "@connectrpc/connect";
 import { createConnectTransport } from "@connectrpc/connect-web";
-
-// Import service definition that you want to connect to.
-import { ElizaService } from "@buf/connectrpc_eliza.connectrpc_es/connectrpc/eliza/v1/eliza_connect";
 import { AuthenticationService } from '@/proto/authentication_connect'
 
 const transport = createConnectTransport({

@@ -3,7 +3,7 @@
 /* eslint-disable */
 // @ts-nocheck
 
-import { LoginRequest, LoginResponse, LogoutRequest, LogoutResponse } from "./authentication_pb";
+import { LoginRequest, LoginResponse, LogoutRequest, LogoutResponse } from "./authentication_pb.js";
 import { MethodKind } from "@bufbuild/protobuf";
 
 /**
