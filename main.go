@@ -1,21 +1,27 @@
 package main
 
 import (
-	docker_sphere_gateway "docker_sphere/gateway"
-	"log/slog"
-	"os"
+	"docker_sphere/orchestrators"
+	systems_mongodb "docker_sphere/systems/mongodb"
 )
 
 func main() {
 
 	/**
-	 * Structured logging setup
+	 * Test mongo..
 	 */
-	logger := slog.New(slog.NewJSONHandler(os.Stdout, nil))
-	slog.SetDefault(logger)
+	systems_mongodb.Initialize()
 
-	go docker_sphere_gateway.Initialize()
+	orchestrators.CreateUser("test", "test")
 
-	// Keep running
-	select {}
+	///**
+	// * Structured logging setup
+	// */
+	//logger := slog.New(slog.NewJSONHandler(os.Stdout, nil))
+	//slog.SetDefault(logger)
+	//
+	//go docker_sphere_gateway.Initialize()
+	//
+	//// Keep running
+	//select {}
 }
