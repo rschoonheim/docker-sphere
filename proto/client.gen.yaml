@@ -1,10 +1,10 @@
 version: v1
 plugins:
   - plugin: es
-    out: ./project/dashboard/src
+    out: ./dashboard/src
     opt:
       - target=ts
   - plugin: connect-es
-    out: ./project/dashboard/src
+    out: ./dashboard/src
     opt:
       - target=ts
