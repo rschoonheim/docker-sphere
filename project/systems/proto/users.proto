@@ -1,5 +1,0 @@
-syntax = 'proto3';
-
-package docker_sphere.users.v1;
-
-option go_package = "./user";

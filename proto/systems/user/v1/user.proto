@@ -1,0 +1,10 @@
+syntax = 'proto3';
+
+package proto.systems.user.v1;
+
+option go_package = "docker_sphere/project/systems/user";
+
+message User {
+  string username = 1;
+  string password = 2;
+}
