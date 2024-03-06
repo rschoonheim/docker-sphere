@@ -7,80 +7,6 @@ import type { BinaryReadOptions, FieldList, JsonReadOptions, JsonValue, PartialM
 import { Message, proto3 } from "@bufbuild/protobuf";
 
 /**
- * @generated from message proto.gateway.docker.v1.Containers
- */
-export class Containers extends Message<Containers> {
-  /**
-   * @generated from field: repeated proto.gateway.docker.v1.Container containers = 1;
-   */
-  containers: Container[] = [];
-
-  constructor(data?: PartialMessage<Containers>) {
-    super();
-    proto3.util.initPartial(data, this);
-  }
-
-  static readonly runtime: typeof proto3 = proto3;
-  static readonly typeName = "proto.gateway.docker.v1.Containers";
-  static readonly fields: FieldList = proto3.util.newFieldList(() => [
-    { no: 1, name: "containers", kind: "message", T: Container, repeated: true },
-  ]);
-
-  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): Containers {
-    return new Containers().fromBinary(bytes, options);
-  }
-
-  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): Containers {
-    return new Containers().fromJson(jsonValue, options);
-  }
-
-  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): Containers {
-    return new Containers().fromJsonString(jsonString, options);
-  }
-
-  static equals(a: Containers | PlainMessage<Containers> | undefined, b: Containers | PlainMessage<Containers> | undefined): boolean {
-    return proto3.util.equals(Containers, a, b);
-  }
-}
-
-/**
- * @generated from message proto.gateway.docker.v1.Container
- */
-export class Container extends Message<Container> {
-  /**
-   * @generated from field: string name = 1;
-   */
-  name = "";
-
-  constructor(data?: PartialMessage<Container>) {
-    super();
-    proto3.util.initPartial(data, this);
-  }
-
-  static readonly runtime: typeof proto3 = proto3;
-  static readonly typeName = "proto.gateway.docker.v1.Container";
-  static readonly fields: FieldList = proto3.util.newFieldList(() => [
-    { no: 1, name: "name", kind: "scalar", T: 9 /* ScalarType.STRING */ },
-  ]);
-
-  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): Container {
-    return new Container().fromBinary(bytes, options);
-  }
-
-  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): Container {
-    return new Container().fromJson(jsonValue, options);
-  }
-
-  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): Container {
-    return new Container().fromJsonString(jsonString, options);
-  }
-
-  static equals(a: Container | PlainMessage<Container> | undefined, b: Container | PlainMessage<Container> | undefined): boolean {
-    return proto3.util.equals(Container, a, b);
-  }
-}
-
-/**
  * @generated from message proto.gateway.docker.v1.ListContainersRequest
  */
 export class ListContainersRequest extends Message<ListContainersRequest> {
@@ -122,9 +48,9 @@ export class ListContainersRequest extends Message<ListContainersRequest> {
  */
 export class ListContainersResponse extends Message<ListContainersResponse> {
   /**
-   * @generated from field: proto.gateway.docker.v1.Containers containers = 1;
+   * @generated from field: repeated proto.gateway.docker.v1.Container containers = 1;
    */
-  containers?: Containers;
+  containers: Container[] = [];
 
   constructor(data?: PartialMessage<ListContainersResponse>) {
     super();
@@ -134,7 +60,7 @@ export class ListContainersResponse extends Message<ListContainersResponse> {
   static readonly runtime: typeof proto3 = proto3;
   static readonly typeName = "proto.gateway.docker.v1.ListContainersResponse";
   static readonly fields: FieldList = proto3.util.newFieldList(() => [
-    { no: 1, name: "containers", kind: "message", T: Containers },
+    { no: 1, name: "containers", kind: "message", T: Container, repeated: true },
   ]);
 
   static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ListContainersResponse {
@@ -151,6 +77,57 @@ export class ListContainersResponse extends Message<ListContainersResponse> {
 
   static equals(a: ListContainersResponse | PlainMessage<ListContainersResponse> | undefined, b: ListContainersResponse | PlainMessage<ListContainersResponse> | undefined): boolean {
     return proto3.util.equals(ListContainersResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message proto.gateway.docker.v1.Container
+ */
+export class Container extends Message<Container> {
+  /**
+   * id
+   *
+   * @generated from field: string id = 1;
+   */
+  id = "";
+
+  /**
+   * @generated from field: string name = 2;
+   */
+  name = "";
+
+  /**
+   * @generated from field: string status = 3;
+   */
+  status = "";
+
+  constructor(data?: PartialMessage<Container>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "proto.gateway.docker.v1.Container";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "name", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "status", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): Container {
+    return new Container().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): Container {
+    return new Container().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): Container {
+    return new Container().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: Container | PlainMessage<Container> | undefined, b: Container | PlainMessage<Container> | undefined): boolean {
+    return proto3.util.equals(Container, a, b);
   }
 }
 

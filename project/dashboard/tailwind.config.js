@@ -37,6 +37,9 @@ export default {
         'field-hover-02': '#474747',
         'field-hover-03': '#636363',
 
+        // Border tile
+        'border-tile-1': '#c6c6c6',
+
         // Expanding Text Colors
         'text-primary': '#f4f4f4', // Primary text color
         'text-secondary': '#c6c6c6', // Secondary text color

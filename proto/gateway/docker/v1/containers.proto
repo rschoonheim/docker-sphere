@@ -4,12 +4,8 @@ package proto.gateway.docker.v1;
 
 option go_package = "docker_sphere/project/gateway/pkg/docker";
 
-message Containers {
-  repeated Container containers = 1;
-}
-
-message Container {
-  string name = 1;
+service DockerService {
+  rpc ListContainers(ListContainersRequest) returns (ListContainersResponse);
 }
 
 message ListContainersRequest {
@@ -17,9 +13,12 @@ message ListContainersRequest {
 }
 
 message ListContainersResponse {
-  Containers containers = 1;
+  repeated Container containers = 1;
 }
 
-service DockerService {
-  rpc ListContainers(ListContainersRequest) returns (ListContainersResponse);
+message Container {
+  // id
+  string id = 1;
+  string name = 2;
+  string status = 3;
 }
