@@ -2,7 +2,7 @@ syntax = 'proto3';
 
 package proto.gateway.docker.v1;
 
-option go_package = "docker_sphere/project/gateway/pkg/docker";
+option go_package = "docker_sphere/gateway/pkg/docker";
 
 service DockerService {
   rpc ListContainers(ListContainersRequest) returns (ListContainersResponse);

@@ -2,7 +2,7 @@ package orchestrators
 
 import (
 	"context"
-	"docker_sphere/project/systems/docker"
+	"docker_sphere/systems/docker"
 	"github.com/docker/docker/api/types"
 	"github.com/docker/docker/api/types/container"
 )

@@ -2,9 +2,9 @@ package orchestrators
 
 import (
 	"context"
-	"docker_sphere/project/systems/mongodb"
-	"docker_sphere/project/systems/security"
-	"docker_sphere/project/systems/user"
+	"docker_sphere/systems/mongodb"
+	"docker_sphere/systems/security"
+	"docker_sphere/systems/user"
 	"errors"
 	"go.mongodb.org/mongo-driver/bson"
 )

@@ -7,7 +7,7 @@ package gateway_authenticationconnect
 import (
 	connect "connectrpc.com/connect"
 	context "context"
-	authentication "docker_sphere/project/gateway/pkg/authentication"
+	authentication "docker_sphere/gateway/pkg/authentication"
 	errors "errors"
 	http "net/http"
 	strings "strings"

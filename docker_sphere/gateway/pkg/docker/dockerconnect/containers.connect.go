@@ -7,7 +7,7 @@ package dockerconnect
 import (
 	connect "connectrpc.com/connect"
 	context "context"
-	docker "docker_sphere/project/gateway/pkg/docker"
+	docker "docker_sphere/gateway/pkg/docker"
 	errors "errors"
 	http "net/http"
 	strings "strings"

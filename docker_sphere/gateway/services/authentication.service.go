@@ -3,9 +3,9 @@ package gateway_services
 import (
 	"connectrpc.com/connect"
 	"context"
-	authentication "docker_sphere/project/gateway/pkg/authentication"
-	"docker_sphere/project/gateway/pkg/authentication/gateway_authenticationconnect"
-	"docker_sphere/project/orchestrators"
+	authentication "docker_sphere/gateway/pkg/authentication"
+	"docker_sphere/gateway/pkg/authentication/gateway_authenticationconnect"
+	"docker_sphere/orchestrators"
 	"errors"
 	"log/slog"
 )

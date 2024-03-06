@@ -1,9 +1,9 @@
 package docker_sphere_gateway
 
 import (
-	authentication_connect "docker_sphere/project/gateway/pkg/authentication/gateway_authenticationconnect"
-	gateway_dockerconnect "docker_sphere/project/gateway/pkg/docker/dockerconnect"
-	gateway_services "docker_sphere/project/gateway/services"
+	authentication_connect "docker_sphere/gateway/pkg/authentication/gateway_authenticationconnect"
+	gateway_dockerconnect "docker_sphere/gateway/pkg/docker/dockerconnect"
+	gateway_services "docker_sphere/gateway/services"
 	"github.com/rs/cors"
 	"golang.org/x/net/http2"
 	"golang.org/x/net/http2/h2c"

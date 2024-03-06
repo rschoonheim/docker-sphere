@@ -1,8 +1,8 @@
 package main
 
 import (
-	docker_sphere_gateway "docker_sphere/project/gateway"
-	systems_mongodb "docker_sphere/project/systems/mongodb"
+	docker_sphere_gateway "docker_sphere/gateway"
+	systems_mongodb "docker_sphere/systems/mongodb"
 	"log/slog"
 	"os"
 )

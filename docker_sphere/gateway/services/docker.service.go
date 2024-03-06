@@ -3,9 +3,9 @@ package gateway_services
 import (
 	"connectrpc.com/connect"
 	"context"
-	"docker_sphere/project/gateway/pkg/docker"
-	"docker_sphere/project/gateway/pkg/docker/dockerconnect"
-	"docker_sphere/project/orchestrators"
+	"docker_sphere/gateway/pkg/docker"
+	"docker_sphere/gateway/pkg/docker/dockerconnect"
+	"docker_sphere/orchestrators"
 )
 
 type DockerService struct {

@@ -2,7 +2,7 @@ syntax = 'proto3';
 
 package proto.systems.user.v1;
 
-option go_package = "docker_sphere/project/systems/user";
+option go_package = "docker_sphere/systems/user";
 
 message User {
   string username = 1;
