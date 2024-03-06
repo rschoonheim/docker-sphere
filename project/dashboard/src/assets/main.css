@@ -1,0 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    @import "node_modules/@ibm/plex/css/ibm-plex.css";
+}
