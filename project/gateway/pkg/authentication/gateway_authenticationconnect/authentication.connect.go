@@ -2,12 +2,12 @@
 //
 // Source: proto/gateway/authentication/v1/authentication.proto
 
-package authenticationconnect
+package gateway_authenticationconnect
 
 import (
-	authentication "authentication"
 	connect "connectrpc.com/connect"
 	context "context"
+	authentication "docker_sphere/project/gateway/pkg/authentication"
 	errors "errors"
 	http "net/http"
 	strings "strings"

@@ -1,6 +1,6 @@
 version: v1
 plugins:
   - plugin: go
-    out: ./project/gateway/pkg/server
+    out: ./
   - plugin: connect-go
-    out: ./project/gateway/pkg/server
+    out: ./

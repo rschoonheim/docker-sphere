@@ -5,6 +5,12 @@ export default {
     './src/**/*.{vue,js,ts,jsx,tsx}',
     './src/views/**/*.{vue,js,ts,jsx,tsx}'
   ],
+  safelist: [
+    // pattern
+    {
+      pattern: /h-[(32)]/,
+    },
+  ],
   theme: {
     extend: {
       fontFamily: {
@@ -71,7 +77,7 @@ export default {
         'skeleton-01': '#353535',
 
         // Focus Colors
-        'focus': '#ffffff',
+        'focus': '#0f62fe',
         'focus-inset': '#161616',
         'focus-inverse': '#0f62fe',
 
@@ -141,7 +147,13 @@ export default {
         'tag-background-green': '#0e6027',
         'tag-color-green': '#a7f0ba',
         'tag-hover-green': '#11742f',
-        'tag-border-green': '#24a148'
+        'tag-border-green': '#24a148',
+
+        // Button Primary
+        'button-primary': '#0f62fe',
+        'button-primary-hover': '#0353e9',
+        'button-primary-active': '#002d9c',
+        'button-primary-disabled': '#525252'
       },
       spacing: {
         'spacing-01': '0.125rem', // 2px
@@ -156,8 +168,8 @@ export default {
         'spacing-10': '4rem',     // 64px
         'spacing-11': '5rem',     // 80px
         'spacing-12': '6rem',     // 96px
-        'spacing-13': '10rem',    // 160px
-      },
+        'spacing-13': '10rem'    // 160px
+      }
     }
   },
   plugins: []

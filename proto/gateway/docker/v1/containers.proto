@@ -1,0 +1,25 @@
+syntax = 'proto3';
+
+package proto.gateway.docker.v1;
+
+option go_package = "docker_sphere/project/gateway/pkg/docker";
+
+message Containers {
+  repeated Container containers = 1;
+}
+
+message Container {
+  string name = 1;
+}
+
+message ListContainersRequest {
+  string filter = 1;
+}
+
+message ListContainersResponse {
+  Containers containers = 1;
+}
+
+service DockerService {
+  rpc ListContainers(ListContainersRequest) returns (ListContainersResponse);
+}
