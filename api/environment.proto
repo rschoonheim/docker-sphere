@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+package environment.v1;
+
+option go_package = "./environment";
+
+service EnvironmentService {
+  rpc GetEnvironmentHealth(Empty) returns (GetEnvironmentHealthResponse);
+}
+
+message Empty {}
+
+message GetEnvironmentHealthResponse {
+  string docker_status = 1;
+}

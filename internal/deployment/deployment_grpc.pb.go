@@ -2,7 +2,7 @@
 // versions:
 // - protoc-gen-go-grpc v1.2.0
 // - protoc             v3.12.4
-// source: protos/deployment.proto
+// source: api/deployment.proto
 
 package deployment
 
@@ -173,5 +173,5 @@ var DeploymentService_ServiceDesc = grpc.ServiceDesc{
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
-	Metadata: "protos/deployment.proto",
+	Metadata: "api/deployment.proto",
 }

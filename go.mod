@@ -1,4 +1,4 @@
-module docker_sphere
+module github.com/rschoonheim/docker-sphere
 
 go 1.22
 
