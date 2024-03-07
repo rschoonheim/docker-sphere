@@ -3,6 +3,9 @@ if ! buf lint; then
   exit 1
 fi
 
-npx buf generate --template ./proto/server.gen.yaml
-npx buf generate --template ./proto/client.gen.yaml --path ./proto/gateway
-buf generate --template ./proto/cli.gen.yaml --path ./proto/gateway
+
+# Build the server protos
+#
+protoc --go_out=./internal/pkg \
+       --go-grpc_out=./internal/pkg \
+       ./proto/v1/user.proto
