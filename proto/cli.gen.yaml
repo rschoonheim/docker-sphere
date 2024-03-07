@@ -1,0 +1,6 @@
+version: v1
+plugins:
+  - plugin: go
+    out: ./cli
+  - plugin: connect-go
+    out: ./cli
