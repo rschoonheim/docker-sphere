@@ -10,7 +10,8 @@ protoc --go_out=./internal \
 # Build the proto files for gRPC-web. Respect
 # the go package name for the generated files
 protoc -I=./api \
-       --grpc-web_out=import_style=typescript,mode=grpcweb:./internal \
+       --js_out=import_style=commonjs,binary:./web/src/proto \
+       --grpc-web_out=import_style=typescript,mode=grpcwebtext:./web/src/proto \
        ./api/**/*.proto
 
 

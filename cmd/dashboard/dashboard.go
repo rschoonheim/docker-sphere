@@ -13,9 +13,9 @@ func main() {
 
 		// Does the path contains the `/assets/` string?
 		if strings.Contains(r.URL.Path, "/assets/") {
-			http.ServeFile(w, r, "web/"+r.URL.Path)
+			http.ServeFile(w, r, "web/dist/"+r.URL.Path)
 		} else {
-			http.ServeFile(w, r, "web/index.html")
+			http.ServeFile(w, r, "web/dist/index.html")
 		}
 
 	})

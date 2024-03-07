@@ -29,12 +29,5 @@ func main() {
 		}
 	}()
 
-	/**
-	 * Start gRPC-web server in a goroutine
-	 */
-	go func() {
-
-	}()
-
 	select {}
 }
