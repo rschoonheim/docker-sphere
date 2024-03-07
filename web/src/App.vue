@@ -1,12 +1,21 @@
 <script setup lang="ts">
 import { RouterLink, RouterView } from 'vue-router'
 import HelloWorld from './components/HelloWorld.vue'
-import { DeploymentServiceClient } from '@/proto/deployment/DeploymentServiceClientPb'
+import { createConnectTransport } from '@connectrpc/connect-web'
+import { createPromiseClient } from '@connectrpc/connect'
+import { DeploymentService } from '@/proto/api/deployment/deployment_connect'
 
+const transport = createConnectTransport({
+  baseUrl: "http://0.0.0.0:8080",
+});
 
+// Here we make the client itself, combining the service
+// definition with the transport.
+const client = createPromiseClient(DeploymentService, transport);
 
-const deployment = new DeploymentServiceClient("http://" + "0.0.0.0" + ":8080");
-
+client.listDeployments({}).then((response) => {
+  console.log(response);
+});
 
 </script>
 

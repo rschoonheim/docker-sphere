@@ -1,9 +1,11 @@
 package main
 
 import (
-	"github.com/rschoonheim/docker-sphere/internal/deployment"
+	"golang.org/x/net/http2"
+	"golang.org/x/net/http2/h2c"
 	"google.golang.org/grpc"
 	"net"
+	"net/http"
 )
 
 func main() {
@@ -13,7 +15,20 @@ func main() {
 	 * registered.
 	 */
 	server := grpc.NewServer()
-	deployment.RegisterDeploymentServiceServer(server, &deployment.DeploymentService{})
+
+	/**
+	 * Start HTTP 2.0 server for gRPC in
+	 * a goroutine
+	 */
+	go func() {
+		mux := http.NewServeMux()
+		mux.Handle("/deployment.v1.DeploymentService/", server)
+
+		http.ListenAndServe(
+			"localhost:8080",
+			h2c.NewHandler(mux, &http2.Server{}),
+		)
+	}()
 
 	/**
 	 * Start gRPC server in a goroutine

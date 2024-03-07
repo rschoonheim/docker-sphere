@@ -16,6 +16,8 @@
     "format": "prettier --write src/"
   },
   "dependencies": {
+    "@connectrpc/connect": "^1.4.0",
+    "@connectrpc/connect-web": "^1.4.0",
     "google-protobuf": "^3.21.2",
     "grpc-web": "^1.5.0",
     "pinia": "^2.1.7",

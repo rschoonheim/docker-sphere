@@ -2,7 +2,7 @@ syntax = "proto3";
 
 package deployment.v1;
 
-option go_package = "./deployment";
+option go_package = "github.com/rschoonheim/docker-sphere/internal/api/deployment";
 
 service DeploymentService {
   rpc CreateDeployment(CreateDeploymentRequest) returns (CreateDeploymentResponse);
