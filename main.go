@@ -1,36 +1,48 @@
 package main
 
 import (
-	docker_sphere_gateway "docker_sphere/internal/docker_sphere/gateway"
-	systems_mongodb "docker_sphere/internal/docker_sphere/systems/mongodb"
-	"log/slog"
-	"os"
+	"docker_sphere/packages/deployment"
+	"google.golang.org/grpc"
+	"net"
 )
 
 func main() {
 
 	/**
-	* Structured logging setup
-	* ----------------------------------------
-	*
+	 * Create gRPC server with services
+	 * registered.
 	 */
-	logger := slog.New(slog.NewJSONHandler(os.Stdout, nil))
-	slog.SetDefault(logger)
+	server := grpc.NewServer()
+	deployment.RegisterDeploymentServiceServer(server, &deployment.DeploymentService{})
 
 	/**
-	 * MongoDB Initialization
-	 * ----------------------------------------
-	 *
+	 * Start HTTP 2.0 server for gRPC in
+	 * a goroutine
 	 */
-	systems_mongodb.Initialize()
+	go func() {
+		listener, err := net.Listen("tcp", ":50091")
+		if err != nil {
+			panic(err)
+		}
+
+		if err := server.Serve(listener); err != nil {
+			panic(err)
+		}
+	}()
 
 	/**
-	 * Gateway Initialization
-	 * ----------------------------------------
-	 *
+	 * Start gRPC server in a goroutine
 	 */
-	go docker_sphere_gateway.Initialize()
+	go func() {
+		listener, err := net.Listen("tcp", ":8080")
+		if err != nil {
+			panic(err)
+		}
 
-	// Keep running
+		if err := server.Serve(listener); err != nil {
+			panic(err)
+		}
+	}()
+
 	select {}
 }
