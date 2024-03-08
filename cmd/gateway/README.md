@@ -1,1 +1,1 @@
-# Docker Sphere Gateway
+# Docker Sphere - Gateway

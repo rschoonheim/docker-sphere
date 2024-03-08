@@ -1,1 +1,1 @@
-# Docker Sphere CLI
+# Docker Sphere - CLI
